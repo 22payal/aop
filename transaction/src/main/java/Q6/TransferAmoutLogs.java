@@ -18,7 +18,7 @@ public class TransferAmoutLogs {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void saveTransferLogs(String sender,String reciever,int transferedAmt){
-            String query="insert into account_transaction (sender,reciever,tramount) values(?,?)"; // here i removed 1 parameter ? to throw runtime exception
+            String query="insert into account_transaction (sender,reciever,tramount) values(?,?)"; 
             jdbcTemplate.update(query,new Object[]{sender,reciever,transferedAmt});
 
 
